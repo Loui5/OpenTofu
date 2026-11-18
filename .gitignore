@@ -1,0 +1,26 @@
+# OpenTofu / Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Variable files - may contain secrets
+*.tfvars
+*.tfvars.json
+
+# Environment / credentials
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
