@@ -30,22 +30,22 @@ resource "azurerm_virtual_network" "vnet_hub" {
   }
 }
 
-#### github runner
+# Github runner
 
 resource "azurerm_resource_group" "rg_github_runner" {
-  name = "rg-github-runner"
+  name     = "rg-github-runner"
   location = var.location
 
-  tags = { 
+  tags = {
     environment = "prd"
     managed_by  = "opentofu"
   }
 }
 
 resource "azurerm_virtual_network" "vnet_github_runner" {
-  name = "vnet-github-runner"
-  location = var.location
-  address_space = ["10.0.0.1/24"]
+  name          = "vnet-github-runner"
+  location      = var.location
+  address_space = ["10.0.1.0/24"]
 
 
   tags = {
