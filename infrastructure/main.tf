@@ -54,3 +54,14 @@ resource "azurerm_virtual_network" "vnet_github_runner" {
     managed_by  = "opentofu"
   }
 }
+
+resource "azurerm_container_app_environment" "container_environment_runner" {
+  name                = "cae-github-runner"
+  location            = var.location
+  resource_group_name = azurerm_resource_group.rg_github_runner.name
+
+  tags = {
+    environment = "prd"
+    managed_by  = "opentofu"
+  }
+}
