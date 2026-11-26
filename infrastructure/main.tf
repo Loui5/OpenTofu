@@ -8,7 +8,12 @@ resource "azurerm_resource_group" "learning" {
   }
 }
 
-resource "azurerm_resource_group" "rg-network-hub"{
-  name  = "rg-network-hub"
+resource "azurerm_resource_group" "rg_network_hub"{
+  name     = "rg-network-hub"
   location = var.location
+
+  tags = {
+    environment = "prd"
+    managed_by  = "opentofu"
+  }
 }
