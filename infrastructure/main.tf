@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "learning" {
   name     = "rg-opentofu-learning"
-  location = "UK South"
+  location = var.location
 
   tags = {
     environment = "test"
@@ -8,3 +8,7 @@ resource "azurerm_resource_group" "learning" {
   }
 }
 
+resource "azurerm_resource_group" "rg-network-hub"{
+  name  = "rg-network-hub"
+  location = var.location
+}
